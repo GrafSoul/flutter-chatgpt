@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_chatgpt_tutorial_yt/pages/chat_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import './pages/chat_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,16 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       title: 'ChatGPT Assistant Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
-      getPages: [
-        GetPage(name: '/', page: () => const ChatPage()),
-      ],
+      home: const ChatPage(),
     );
   }
 }
